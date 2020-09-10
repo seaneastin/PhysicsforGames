@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(Rigidbody))]
-public class BallBehavior : MonoBehaviour
+public class CannonBallBehavior : MonoBehaviour
 {
     public float forceOnFire = 300;
 
@@ -28,7 +28,7 @@ public class BallBehavior : MonoBehaviour
 
     private void Update()
     {
-        if(Input.anyKeyDown && canFire)
+        if(Input.GetKeyDown("space") && canFire)
         {
             rigidbody.isKinematic = false;
             rigidbody.AddForce(transform.forward * forceOnFire);
